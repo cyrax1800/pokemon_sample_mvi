@@ -1,0 +1,2 @@
+include ':app', ':libs:lib_api', ':data_source', ':features:feature_pokemon_list', ':libs:lib_core'
+rootProject.name = "mvi-stateflow"

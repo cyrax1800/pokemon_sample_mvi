@@ -1,0 +1,39 @@
+apply from: "$rootDir/common.gradle"
+
+android {
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation project(Modules.libCore)
+    implementation project(Modules.libApi)
+    implementation project(Modules.dataSrc)
+
+    // Android
+    implementation Android.appCompat
+    implementation Android.constraintLayout
+    implementation Android.recyclerView
+    implementation Android.swipeRefreshLayout
+
+    implementation Retrofit.retrofit
+
+    // Coroutines
+    implementation Coroutines.core
+    implementation Coroutines.android
+
+    implementation Jetpack.Ktx.core
+    implementation Jetpack.Ktx.lifecycle
+    implementation Jetpack.lifecycle
+    kapt Jetpack.lifecycleCompiler
+
+    // Fast Adapter
+    implementation FastAdapter.core
+    implementation FastAdapter.scroll
+    implementation FastAdapter.ui
+    implementation FastAdapter.diff
+
+    implementation Misc.deeplink
+    kapt Misc.deeplinkProcessor
+}
